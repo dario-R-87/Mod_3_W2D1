@@ -46,7 +46,7 @@ h1_list.innerText += ` (${albums.length})`;
 let fav_cont = 0;
 for (let i = 0; i < albums.length; i++) {
   const html = `
-<div class="col col-5 col-md-4 col-lg-3">
+<div class="col-5 col-md-4 col-lg-3">
  <div class="card mt-4">
     <img src='./${albums[i].img}.jpg' class="card-img-top mt-2" alt="album image" />
     <div class="card-body">
