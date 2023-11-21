@@ -1,0 +1,13 @@
+body{
+ background-color: gray;
+}
+
+.navbar{
+ background-color: #ff8888;
+}
+
+h1 {
+ color: orange;
+ margin-top: 50px !important;
+}
+
