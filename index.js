@@ -68,3 +68,20 @@ for (let i = 0; i < albums.length; i++) {
 }
 const h1_fav_list = document.querySelector("#fav__list h1");
 h1_fav_list.innerText += ` (${fav_cont})`;
+
+const best = document.querySelector("#best__album");
+best.innerHTML = `<img class="mt-4 w-100" src="./${albums[0].img}.jpg" />
+<h3 class="mt-3">Titolo <span class="text-info">${albums[0].title}</span></h3>
+<h3 class="mt-2">Artista <span class="text-info">${albums[0].artist}</span></h3>
+<h3 class="mt-2">Durata <span class="text-info">${albums[0].time}</span></h3>
+<h3 class="mt-2">Genere <span class="text-info">${albums[0].genre}</span></h3>
+<h3 class="mt-2">Brani</h3>
+<ol class="mb-5 list-group list-group-numbered">
+  <li class="list-group-item">c'era una volta pippi</li>
+  <li class="list-group-item">a spasso nel tempo</li>
+  <li class="list-group-item">solo tu</li>
+  <li class="list-group-item">perché lo fai</li>
+  <li class="list-group-item">incacellabile</li>
+  <li class="list-group-item">mi manchi amore mio</li>
+  <li class="list-group-item">non c'è</li>
+</ol>`;
