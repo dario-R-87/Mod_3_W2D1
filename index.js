@@ -37,6 +37,24 @@ for (let i = 0; i < 20; i++) {
   albums.push(obj);
 }
 
+fav_album = {
+    img: "img_4",
+    title: "La solitudine",
+    artist: "Laura Pausini",
+    genre: "pop",
+    time: "73 min",
+    songs: ["c'era una volta pippi",
+	"a spasso nel tempo",
+	"solo tu",
+	"perché lo fai",
+	"incacellabile",
+	"mi manchi amore mio",
+	"non c'è",
+	"Marco se n'è andato",
+	"A volte",
+	"se ami sai"],
+}
+
 //col-xl-2
 const list = document.querySelector("#list");
 const fav_list = document.querySelector("#fav__list");
@@ -44,6 +62,7 @@ const h1_list = document.querySelector("#list h1");
 
 h1_list.innerText += ` (${albums.length})`;
 let fav_cont = 0;
+
 for (let i = 0; i < albums.length; i++) {
   const html = `
 <div class="col-5 col-md-4 col-lg-3">
@@ -66,22 +85,23 @@ for (let i = 0; i < albums.length; i++) {
     fav_cont++;
   }
 }
+
 const h1_fav_list = document.querySelector("#fav__list h1");
 h1_fav_list.innerText += ` (${fav_cont})`;
 
 const best = document.querySelector("#best__album");
-best.innerHTML = `<img class="mt-4 w-100" src="./${albums[0].img}.jpg" />
-<h3 class="mt-3">Titolo <span class="text-info">${albums[0].title}</span></h3>
-<h3 class="mt-2">Artista <span class="text-info">${albums[0].artist}</span></h3>
-<h3 class="mt-2">Durata <span class="text-info">${albums[0].time}</span></h3>
-<h3 class="mt-2">Genere <span class="text-info">${albums[0].genre}</span></h3>
+
+best.innerHTML += `<img class="mt-4  w-100" src="./${fav_album.img}.jpg" />
+<h3 class="mt-3">Titolo <span class="text-info">${fav_album.title}</span></h3>
+<h3 class="mt-2">Artista <span class="text-info">${fav_album.artist}</span></h3>
+<h3 class="mt-2">Durata <span class="text-info">${fav_album.time}</span></h3>
+<h3 class="mt-2">Genere <span class="text-info">${fav_album.genre}</span></h3>
 <h3 class="mt-2">Brani</h3>
-<ol class="mb-5 list-group list-group-numbered">
-  <li class="list-group-item">c'era una volta pippi</li>
-  <li class="list-group-item">a spasso nel tempo</li>
-  <li class="list-group-item">solo tu</li>
-  <li class="list-group-item">perché lo fai</li>
-  <li class="list-group-item">incacellabile</li>
-  <li class="list-group-item">mi manchi amore mio</li>
-  <li class="list-group-item">non c'è</li>
-</ol>`;
+<ol class="mb-5 list-group list-group-numbered"></ol>
+`;
+
+const songs_list = document.querySelector("#best__album ol");
+
+for(let i=0; i<fav_album.songs.length; i++){
+ songs_list.innerHTML += `<li class="list-group-item">${fav_album.songs[i]}</li>`;
+}
